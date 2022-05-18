@@ -1,0 +1,72 @@
+.streampay__payment-control,
+#place_order {
+    &[aria-hidden="true"] {
+        display: none !important;
+    }
+}
+
+.streampay__header__warning {
+    background-color: var(--gray-500);
+    padding: 12px;
+    border-left: 8px solid var(--purple-900);
+    color: black;
+}
+
+button.streampay__payment-control__connect-wallet.streampay__payment-control {
+    margin-top: 16px;
+    margin-bottom: 0;
+}
+
+.streampay__payment-control__place-order {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    white-space: nowrap;
+    background-color: black;
+    color: white;
+    margin-right: 6px;
+    margin-left: 6px;
+    &:hover {
+        color: white;
+        background-color: black;
+        opacity: 0.85;
+    }
+}
+
+.streampay__payment-control__place-order-image {
+    width: 20px;
+    margin-right: 4px;
+    margin-left: 4px;
+}
+
+.streampay__payment-control:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.streampay__payment-control__error.streampay__alert--error {
+    opacity: 1;
+    width: unset;
+}
+
+.streampay__payment-control__error-content {
+    margin-bottom: 0;
+}
+
+.streampay__payment-control__success {
+    text-align: center;
+}
+
+.streampay__payment-control__success__icon svg {
+    width: max(min(9vw, 110px), 64px);
+}
+
+.streampay__payment-control__success__heading {
+    font-weight: bold;
+}
+
+.streampay__payment-control__success__desc {
+    font-size: max(min(1.3vw, 20px), 16px);
+    color: var(--gray-800);
+}
