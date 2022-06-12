@@ -1,7 +1,8 @@
 === StreamPay Payment Gateway ===
 
 Contributors: streampayplugins
-Donate link: https://streamprotocol.org
+Donate link: 
+Plugins: https://streamprotocol.org/plugins (website is under construction)
 Tags: solana pay, stream protocol, woocommerce, payment, payment gateway, solana, crypto, phantom, phantom wallet
 Requires at least: 4.7
 Tested up to: 5.9
