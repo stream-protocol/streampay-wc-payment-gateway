@@ -1,4 +1,4 @@
-=== StreamPay - WooCommerce Payment Gateway ===
+=== StreamPay Payment Gateway ===
 
 Contributors: streampayplugins
 Donate link: https://streamprotocol.org
