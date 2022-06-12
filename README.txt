@@ -10,7 +10,7 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-=== Stream Payment Gateway === 
+=== StreamPay - WooCommerce Payment Gateway === 
 
 Web3 Payment Plugin for WordPress websites using Solana blockchain: A completely free, open source, permissionless, censorship-resistant, decentralized WordPress/WooCommerce payment gateway extension plugin using the power of the Solana blockchain.
 
