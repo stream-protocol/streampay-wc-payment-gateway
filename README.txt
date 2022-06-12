@@ -1,7 +1,5 @@
 === StreamPay - WooCommerce Payment Gateway ===
 
-Web3 Payment Plugin for WordPress websites using Solana blockchain: A completely free, open source, permissionless, censorship-resistant, decentralized WordPress/WooCommerce payment gateway extension plugin using the power of the Solana blockchain.
-
 Contributors: streampayplugins
 Donate link: https://streamprotocol.org
 Tags: solana pay, stream protocol, woocommerce, payment, payment gateway, solana, crypto, phantom, phantom wallet
@@ -12,7 +10,9 @@ Requires PHP: 7.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Stream Pay / Solana Pay for Woocommerce websites. Permissionless, open source, and fast payments.
+=== Stream Payment Gateway === 
+
+Web3 Payment Plugin for WordPress websites using Solana blockchain: A completely free, open source, permissionless, censorship-resistant, decentralized WordPress/WooCommerce payment gateway extension plugin using the power of the Solana blockchain.
 
 == Description ==
 Allows for Stream Pay Payment Gateway on WooCommerce Stores. Currently supports STRM, USDC on Solana and Phantom wallet. More coming soon.
