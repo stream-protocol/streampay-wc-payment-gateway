@@ -16,7 +16,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Web3 Payment Plugin for WordPress websites using Solana blockchain: A completely free, open source, permissionless, censorship-resistant, decentralized WordPress/WooCommerce payment gateway extension plugin using the power of the Solana blockchain.
 
 == Description ==
-Allows for Stream Pay Payment Gateway on WooCommerce Stores. Currently supports STRM, USDC on Solana and Phantom wallet. More coming soon.
+Allows for StreamPay Payment Gateway on WooCommerce Stores. Currently supports STRM, USDC on Solana and Phantom wallet. More coming soon.
 
 Adds a connect Phantom wallet button to the checkout page, after connecting wallet, users may pay in SOL, STRM and USDC tokens on Solana after clicking StreamPay button.
 
@@ -29,16 +29,16 @@ or Use WordPress’ Add New Plugin feature, search “streampay”,
 
 == Frequently Asked Questions ==
 
-= Why Stream Pay? =
+= Why StreamPay? =
 
-Stream Pay is a permissionless, open source and micro-fee way for merchants to allow purchase on their store to cryptocurrency users.
+StreamPay is a permissionless, open source and micro-fee way for merchants to allow purchase on their store to cryptocurrency users.
 
-You can learn more on StreamPay and Solanapay.com 
+You can learn more on StreamPay https://streamprotocol.org
 
 == Screenshots ==
 
 1. User frontend with Wallet connected at checkout and Solana Pay button displaying.
-2. WordPress administrator/VooCommerce merchant settings display.
+2. WordPress administrator/WooCommerce merchant settings display.
 
 == Changelog ==
 
