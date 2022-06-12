@@ -1,5 +1,5 @@
 import { getWPLocalizedText } from "../utils/functions";
-import { WP_LOCALIZED_TEXT } from "../utils/enums";
+import { WP_LOCLIZED_TEXT } from "../utils/enums";
 
 const $ = jQuery;
 
@@ -18,11 +18,11 @@ export async function getAPITotalAmount() {
                 if (res && res.data && res.data.total !== undefined) {
                     resolve(+res.data.total);
                 } else {
-                    reject(getWPLocalizedText(WP_LOCALIZED_TEXT.ORDER_AMOUNT_ERROR));
+                    reject(getWPLocalizedText(WP_LOCLIZED_TEXT.ORDER_AMOUNT_ERROR));
                 }
             },
             error: (err) => {
-                reject(getWPLocalizedText(WP_LOCALIZED_TEXT.ORDER_AMOUNT_ERROR));
+                reject(getWPLocalizedText(WP_LOCLIZED_TEXT.ORDER_AMOUNT_ERROR));
             },
         });
     });

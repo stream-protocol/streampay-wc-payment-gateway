@@ -5,7 +5,7 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://plugins.streampay.shop
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
  * @package    StreamPay

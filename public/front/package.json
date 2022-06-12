@@ -1,7 +1,7 @@
 {
-    "name": "StreamPaymentGateway",
+    "name": "streampay",
     "version": "1.0.0",
-    "description": "StreamPay WooCommerce Payment Gateway",
+    "description": "",
     "main": "webpack.config.js",
     "scripts": {
         "build": "webpack --env NODE_ENV=production",
@@ -10,7 +10,7 @@
         "test": "jest -no-cache"
     },
     "keywords": [],
-    "author": "Stream Protocol Ltd.",
+    "author": "",
     "license": "ISC",
     "devDependencies": {
         "@babel/core": "^7.17.5",

@@ -3,7 +3,7 @@
 /**
  * All the helper functions we need to use through the plugin.
  *
- * @link       https://plugins.streampay.info
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
  * @package    StreamPay 

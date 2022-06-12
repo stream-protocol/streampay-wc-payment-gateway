@@ -5,10 +5,10 @@
 :root {
     --green-900: #008044;
     --red-900: #d92020;
-    --gray-800: #343434;
+    --gray-800: #404040;
     --gray-500: #f2f2f2;
-    --purple-900: #316d95;
-    --purple-400: #141e30;
+    --purple-900: #7f54b3;
+    --purple-400: #7f54b34d;
 }
 
 .text-bold {
@@ -86,19 +86,19 @@ button.streampay__payment-control__connect-wallet.streampay__payment-control {
     margin-bottom: 0;
 }
 
-.streampay__payment-control__success {
+.streampay__payment-control__sucess {
     text-align: center;
 }
 
-.streampay__payment-control__success__icon svg {
+.streampay__payment-control__sucess__icon svg {
     width: max(min(9vw, 110px), 64px);
 }
 
-.streampay__payment-control__success__heading {
+.streampay__payment-control__sucess__heading {
     font-weight: bold;
 }
 
-.streampay__payment-control__success__desc {
+.streampay__payment-control__sucess__desc {
     font-size: max(min(1.3vw, 20px), 16px);
     color: var(--gray-800);
 }

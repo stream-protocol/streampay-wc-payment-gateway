@@ -1,5 +1,5 @@
-# StreamPay WooCommerce Payment Gateway Plugin
-A completely free, open source, permissionless, censorship-resistant, decentralized WordPress/Woocommerce payment gateway extension plugin using the power of the Solana blockchain.
+# StreamPay Front End
+
 ## Usage
 Run the following command from the _front/_ directory root.
 

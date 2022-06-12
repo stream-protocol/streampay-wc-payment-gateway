@@ -3,7 +3,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://plugins.streampayment.app/download
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
  * @package    StreamPay
@@ -21,9 +21,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  *
  * @package    StreamPay
  * @subpackage StreamPay/admin
- * @author     Stream Protocol / StreamDAO <contact@streamprotocol.org>
+ * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */
-class streampay_Admin {
+class StreamPay_Admin {
 
 	/**
 	 * The ID of this plugin.
@@ -110,7 +110,7 @@ class streampay_Admin {
 			$plugin_path = trailingslashit( WP_PLUGIN_DIR ) . 'woocommerce/woocommerce.php';
 			if ( ! in_array( $plugin_path, wp_get_active_and_valid_plugins() ) ) {
 				 echo '<div class="notice notice-error is-dismissible">
-          <p><strong>' . esc_html__( 'To enable streampay features you need to install the WooCommerce plugin.', 'streampay' ) . '</strong></p>
+          <p><strong>' . esc_html__( 'To enable StreamPay features you need to install the WooCommerce plugin.', 'streampay' ) . '</strong></p>
          </div>';
 			}
 		}

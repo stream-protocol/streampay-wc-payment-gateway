@@ -1,9 +1,9 @@
-import { WP_LOCALIZED_TEXT } from "./enums";
+import { WP_LOCLIZED_TEXT } from "./enums";
 
 /**
  * Gets the localized WP text.
  *
- * @param {WP_LOCALIZED_TEXT | string} key
+ * @param {WP_LOCLIZED_TEXT | string} key
  * @returns {string}
  */
 export function getWPLocalizedText(key) {

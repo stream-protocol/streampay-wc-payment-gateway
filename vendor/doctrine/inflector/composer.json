@@ -6,7 +6,11 @@
     "homepage": "https://www.doctrine-project.org/projects/inflector.html",
     "license": "MIT",
     "authors": [
-        { "name": "StreamDAO", "email": "streampayment@protonmail.com" },
+        {"name": "Guilherme Blanco", "email": "guilhermeblanco@gmail.com"},
+        {"name": "Roman Borschel", "email": "roman@code-factory.org"},
+        {"name": "Benjamin Eberlei", "email": "kontakt@beberlei.de"},
+        {"name": "Jonathan Wage", "email": "jonwage@gmail.com"},
+        {"name": "Johannes Schmitt", "email": "schmittjoh@gmail.com"}
     ],
     "require": {
         "php": "^7.2 || ^8.0"

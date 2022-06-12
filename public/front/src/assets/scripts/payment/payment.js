@@ -6,7 +6,7 @@ import { validateAccounts } from "./validateAccounts";
 import { valiateTransSignature } from "./validateTransSignature";
 import { getAPITotalAmount } from "../api/api";
 import { getWPLocalizedText } from "../utils/functions";
-import { WP_LOCALIZED_TEXT, PAYMENT_STEPS } from "../utils/enums";
+import { WP_LOCLIZED_TEXT, PAYMENT_STEPS } from "../utils/enums";
 import { validateWCCheckoutForm } from "./validateWCCheckoutForm";
 import {
     getLocallySavedTransaction,
@@ -48,7 +48,7 @@ window.onload = function() {
 };
 
 /**
- * Sets the current payment stp.
+ * Sets the current payment setp.
  * @param {PAYMENT_STEPS.CONNECT_WALLET | PAYMENT_STEPS.PAY | PAYMENT_STEPS.DONE} step
  */
 function setPaymentStep(step) {
@@ -56,7 +56,7 @@ function setPaymentStep(step) {
 }
 
 /**
- * Gets the address token for USDC, SOL or a fake token for testing.
+ * Gets the address token for USDC or a fake token for testing.
  * @returns {string} USDC address token.
  */
 export function getUSDCTokenKey() {
@@ -82,14 +82,14 @@ export function getMemo() {
 }
 
 /**
- * Checks whether we are in test mode or not depending on a wp global variable.
+ * Checkes whether we are in test mode or not depending on a wp global variable.
  */
 function isTestMode() {
     return window.streampay && window.streampay.test_mode === "1";
 }
 
 /**
- * Initializes Solana markup & functionality on 1st load, taking into account
+ * Initializes solana markup & functionality on 1st load, takning into account
  * saved transactions for uncompleted orders if found.
  */
 function initSolanaOnFirstLoad() {
@@ -97,8 +97,8 @@ function initSolanaOnFirstLoad() {
 
     if (savedTransaction) {
         /**
-         * If expired, remove the saved transaction and initialize Solana normally,
-         * otherwise mark the transaction already done.
+         * If expired, remove the saved transaction and initialize solana normally,
+         * otherwise mark the transaction aleady done.
          */
         if (isExpiredTransaction(savedTransaction.date, savedTransaction.amountUI)) {
             removeSavedTransactionLocally();
@@ -119,9 +119,9 @@ function handleAlreadyPaidOrder({ amountUI, date, memo, signature }) {
     lastPaymentAmount = amountUI;
     setPaymentStep(PAYMENT_STEPS.DONE);
     createSuccessAlert(
-        `${getWPLocalizedText(WP_LOCALIZED_TEXT.PAID_ORDER_PART_1)} ${new Date(
+        `${getWPLocalizedText(WP_LOCLIZED_TEXT.PAID_ORDER_PART_1)} ${new Date(
       date
-    ).toLocaleDateString()}${getWPLocalizedText(WP_LOCALIZED_TEXT.PAID_ORDER_PART_2)}`
+    ).toLocaleDateString()}${getWPLocalizedText(WP_LOCLIZED_TEXT.PAID_ORDER_PART_2)}`
     );
     removePayButton();
     setTransactionValue(amountUI);
@@ -136,7 +136,7 @@ function handleAlreadyPaidOrder({ amountUI, date, memo, signature }) {
 }
 
 /**
- * Sets the memo passed to be the current memo instead of the WordPress set one.
+ * Sets the momo passed to be the current momo instead of the WP set one.
  * @param {string} memo
  */
 function setMemo(memo) {
@@ -197,7 +197,7 @@ async function triggerSolanaPay(e) {
         const isValid = validateWCCheckoutForm();
 
         if (!isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.INVALID_WC_CHECKOUT_FORM));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.INVALID_WC_CHECKOUT_FORM));
             return;
         }
 
@@ -210,7 +210,7 @@ async function triggerSolanaPay(e) {
 }
 
 /**
- * Triggers the WooCommerce order by clicking the eCommerce place order button.
+ * Triggers the WooCommerce order by clicking the WooCommerce place order button.
  */
 function triggerWCOrder() {
     const placeOrderButton = getWooCommercePlaceOrderButton();
@@ -252,7 +252,7 @@ function handleChoosingSolanaPayment() {
 }
 
 /**
- * Handles choosing Solana after the payment process is already done.
+ * Handles choosing solana after the payment process is already done.
  * - Shows transaction done success message.
  * - Sets the last paid amount in the success message.
  * - Shows info header.
@@ -284,7 +284,7 @@ function handleNotStartedPaymentProcess() {
 }
 
 /**
- * Shows Solana payment control, such as Phantom link or connect wallet button.
+ * Shows Solana payment control, such as phantom link or connect wallet button.
  */
 function showSolanaPaymentControl() {
     if (!SOLANA) return;
@@ -295,7 +295,7 @@ function showSolanaPaymentControl() {
 }
 
 /**
- * Handle after the user has choose another option than paying with Solana
+ * Handle after the user has choosen another option than paying with Solana
  */
 function handleNotChoosingSolanaPayment() {
     toggleWooCommerceOriginalControls(true);
@@ -377,11 +377,11 @@ async function handleValidatingAccounts(connection) {
 
     if (!isValid) {
         if (!recipientAcc || !recipientAcc.isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.RECIPIENT_ACC_NOT_FOUND));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.RECIPIENT_ACC_NOT_FOUND));
         }
 
         if (!payerAcc || !payerAcc.isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.PAYER_ACC_NOT_FOUND));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.PAYER_ACC_NOT_FOUND));
         }
     }
 
@@ -397,7 +397,7 @@ function createConnection() {
 }
 
 /**
- * Creates Solana Pay URL
+ * Creates solana pay URL
  * @param {string} recipientKey
  * @returns Parsed URL
  * @link https://docs.solanapay.com/spec#specification
@@ -412,7 +412,7 @@ function createURL(recipientKey, usdcAmount) {
 }
 
 /**
- * Gets the WordPress order amount.
+ * Gets the WP order amount.
  * @returns {number | -1}
  */
 async function getOrderAmount() {
@@ -425,7 +425,7 @@ async function getOrderAmount() {
 }
 
 /**
- * Gets recipient account public key
+ * Gets recipient account publick key
  * @returns {PublicKey | null}
  */
 function getRecipientPublicKey() {
@@ -433,7 +433,7 @@ function getRecipientPublicKey() {
 }
 
 /**
- * Gets payer account public key from the wallet.
+ * Gets payer account publick key from the wallet.
  * @returns {PublicKey | null}
  */
 function getPayerPublicKey() {
@@ -441,7 +441,7 @@ function getPayerPublicKey() {
 }
 
 /**
- * Create then sends the transaction.
+ * Creats then sends the transaction.
  */
 async function sendTransaction() {
     try {
@@ -457,7 +457,7 @@ async function sendTransaction() {
         let signature = await connection.sendRawTransaction(signed.serialize());
 
         if (signature) {
-            createInfoAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.SENDING_TRANSACTION));
+            createInfoAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.SENDING_TRANSACTION));
 
             const isConfirmed = await confirmSignature(connection, signature);
 
@@ -514,7 +514,7 @@ async function handleTransactionValidation(
     } else {
         handleAfterTransError(
             null,
-            `${getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_NOT_FOUND)} ${signature}`
+            `${getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_NOT_FOUND)} ${signature}`
         );
     }
 }
@@ -545,7 +545,7 @@ function handleValidatedTransaction(signature, amountUI, memo) {
     disconnectWallet();
 
     setTimeout(() => {
-        createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_CREATED));
+        createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_CREATED));
         setTimeout(() => {
             removePayButton();
             showTransactionSuccess();
@@ -558,7 +558,7 @@ function handleValidatedTransaction(signature, amountUI, memo) {
 }
 
 /**
- * Prevent WooCommerce form submit before the payment is done.
+ * Prevent WC form submit before the payment is done.
  */
 function preventSubmitBeforePayment() {
     const formInputs = getJQueryFormInputs();
@@ -571,7 +571,7 @@ function preventSubmitBeforePayment() {
 }
 
 /**
- * Prevent the WooCommerce input from triggering the submit on pressing 'Enter' on keyboard
+ * Prevent the WC input from triggering the submit on pressing 'Enter' on keyboard
  * if the transaction is not done.
  * @param {KeyboardEvent} e
  */
@@ -598,7 +598,7 @@ function transactionIsDone() {
  * @param {string} signature
  */
 async function confirmSignature(connection, signature) {
-    const failedMessage = getWPLocalizedText(WP_LOCALIZED_TEXT.CONFIRMATION_FAILED);
+    const failedMessage = getWPLocalizedText(WP_LOCLIZED_TEXT.CONFIRMATION_FAILED);
     try {
         const timoutMinutes = 2;
         const res = await awaitTransactionSignatureConfirmation(
@@ -608,7 +608,7 @@ async function confirmSignature(connection, signature) {
         );
 
         if (res && !res.err && !res.timeout) {
-            createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_CONFIRMED));
+            createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_CONFIRMED));
             return true;
         } else throw new Error(failedMessage);
     } catch (err) {
@@ -632,7 +632,7 @@ async function connectToPhantom() {
     try {
         await SOLANA.connect();
         // debugger;
-        createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.WALLET_CONNECTED));
+        createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.WALLET_CONNECTED));
         toggleConnectWalletButton(false);
         togglePayButton(true);
         setPaymentStep(PAYMENT_STEPS.PAY);
@@ -644,3 +644,4 @@ async function connectToPhantom() {
         setPaymentStep(PAYMENT_STEPS.CONNECT_WALLET);
         return false;
     }
+}

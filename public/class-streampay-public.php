@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://plugins.streampayment.app/download
+ * @link       https://streamprotocol.org
  * @since      1.0.0
  *
  * @package    StreamPay
@@ -20,9 +20,9 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the public-facing stylesheet and JavaScript.
  *
- * @package    StreamPay
+ * @package    StreamPay WooCommerce Payment Gateway
  * @subpackage StreamPay/public
- * @author     Stream Protocol / StreamDAO  <contact@streamprotocol.org>
+ * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */
 class StreamPay_Public {
 
@@ -72,7 +72,7 @@ class StreamPay_Public {
 		 * defined in StreamPay_Loader as all of the hooks are defined
 		 * in that particular class.
 		 *
-		 * The StreamOay_Loader will then create the relationship
+		 * The StreamPay_Loader will then create the relationship
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
@@ -104,23 +104,23 @@ class StreamPay_Public {
 		wp_enqueue_script( 'app.min.js', plugin_dir_url( __FILE__ ) . 'front/build/app.min.js', array( 'jquery' ), $this->version, true );
 		
 		wp_localize_script( 'app.min.js', 'streampay_text', array(
-			'global' => __( 'Something went wrong', 'StreamPay' ),
-			'recipient_acc_not_found' => __( 'Recipient account was not found', 'StreamPay' ),
-			'payer_acc_not_found' => __( 'Payer account was not found', 'StreamPay' ),
-			'account_not_found' => __( 'Please check your account exist or network connectivity', 'StreamPay' ),
-			'order_amount_error' => __( 'Failed to get order amount', 'StreamPay' ),
-			'transaction_not_found' => __( 'Transaction with the following signature was not found: ', 'StreamPay' ),
-			'invalid_wc_checkout_form' => __( 'Please complete the form', 'StreamPay' ),
-			'transaction_creation_failed' => __( 'Failed to create transaction.', 'StreamPay' ),
-			'confirmation_failed' => __( 'Failed to confirm your transaction, checking the transaction signature...', 'StreamPay' ),
+			'global' => __( 'Something went wrong', 'streampay' ),
+			'recipient_acc_not_found' => __( 'Recipient account was not found', 'streampay' ),
+			'payer_acc_not_found' => __( 'Payer account was not found', 'streampay' ),
+			'account_not_found' => __( 'Please check your account exist or network connectivity', 'streampay' ),
+			'order_amount_error' => __( 'Failed to get order amount', 'streampay' ),
+			'transaction_not_found' => __( 'Transaction with the following signature was not found: ', 'streampay' ),
+			'invalid_wc_checkout_form' => __( 'Please complete the form', 'streampay' ),
+			'transaction_creation_failed' => __( 'Failed to create transaction.', 'streampay' ),
+			'confirmation_failed' => __( 'Failed to confirm your transaction, checking the transaction signature...', 'streampay' ),
 			
-			'wallet_connected' => __( 'Wallet connected successfully', 'StreamPay' ),
-			'sending_transaction' => __( 'Sending transaction', 'StreamPay' ),
-			'transaction_confirmed' => __( 'Waiting for transaction to be confirmed.', 'StreamPay' ),
-			'transaction_created' => __( 'Transaction was created successfully', 'StreamPay' ),
-			'placing_order' => __( 'Placing your order', 'StreamPay' ),
-			'paid_order_part_1' => __( 'Already paid for this order with StreamPay on', 'StreamPay' ),
-			'paid_order_part_2' => __( ', press place order to complete the order.', 'StreamPay' ),
+			'wallet_connected' => __( 'Wallet connected successfully', 'streampay' ),
+			'sending_transaction' => __( 'Sending transaction', 'streampay' ),
+			'transaction_confirmed' => __( 'Waiting for transaction to be confirmed.', 'streampay' ),
+			'transaction_created' => __( 'Transaction was created successfully', 'streampay' ),
+			'placing_order' => __( 'Placing your order', 'streampay' ),
+			'paid_order_part_1' => __( 'Already paid for this order with StreamPay on', 'streampay' ),
+			'paid_order_part_2' => __( ', press place order to complete the order.', 'streampay' ),
 		));
 	}
 	/**

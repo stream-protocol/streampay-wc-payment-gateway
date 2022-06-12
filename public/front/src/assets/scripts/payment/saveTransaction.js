@@ -1,4 +1,4 @@
-const SAVE_TRANSACTION_NAME = "StreampayTransaction";
+const SAVE_TRANSACTION_NAME = "streampayTransaction";
 
 /**
  * Saves the transaction info locally in the browser, so that if the order is not done

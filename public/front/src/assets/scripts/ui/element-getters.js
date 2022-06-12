@@ -72,7 +72,7 @@ export function getInfoHeader() {
 /**
  * Gets the StreamPay payment controls wrapper section.
  */
-export function getstreampayContainer() {
+export function getStreamPayContainer() {
     return document.getElementById("streampay-payment-container");
 }
 

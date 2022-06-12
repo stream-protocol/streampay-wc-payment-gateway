@@ -1,9 +1,9 @@
 <section id="streampay-payment-container">
 	<!-- Header -->
 	<header id="streampay-header" aria-hidden="true" class="streampay__header streampay__payment-control">
-		<h2 class="streampay__header__heading"><?php esc_html_e( 'Pay With USDC', 'StreamPay' ); ?></h2>
+		<h2 class="streampay__header__heading"><?php esc_html_e( 'Pay With USDC', 'streampay' ); ?></h2>
 		<p class="streampay__header__warning">
-			<strong><?php esc_html_e( 'Don\'t close the page until redirected to the order received page or your transaction may be lost.', 'StreamPay' ); ?></strong>
+			<strong><?php esc_html_e( 'Don\'t close the page until redirected to the order received page or your transaction may be lost.', 'streampay' ); ?></strong>
 		</p>
 	</header>
 
@@ -11,8 +11,8 @@
 	<div id="streampay-phantom-link" class="streampay__payment-control streampay__payment-control__phantom-link-wrapper"
 		aria-hidden="true">
 		<a target="_blank" rel="noreferrer noopener" class=" streampay__payment-controls__phantom-link"
-			href="https://phantom.app/"><?php esc_html_e( 'Connect to Phantom Wallet', 'StreamPay' ); ?></a>
-		<p><?php esc_html_e( 'Already installed the Phantom wallet? Try refreshing the page.', 'StreamPay' ); ?></p>
+			href="https://phantom.app/"><?php esc_html_e( 'Connect to Phantom Wallet', 'streampay' ); ?></a>
+		<p><?php esc_html_e( 'Already installed the Phantom wallet? Try refreshing the page.', 'streampay' ); ?></p>
 	</div>
 
 
@@ -22,7 +22,7 @@
 		<!-- Content -->
 		<?php esc_html_e( 'Pay with', 'streampay' ); ?>
 		<img class="streampay__payment-control__place-order-image" src="/wp-content/plugins/streampay/public/front/src/assets/images/solana-sol-logo.svg" alt="" role="presentation"/>
-		<?php esc_html_e( 'Pay', 'StreamPay' ); ?>
+		<?php esc_html_e( 'Pay', 'streampay' ); ?>
 		<!-- Click Layer -->
 		<div id="streampay-place-order-click-layer" class="streampay__clickable__click-layer"></div>
 		<!-- Loader -->
@@ -52,23 +52,23 @@
 	</div>
 
 	<!-- Transaction Success -->
-	<div id="streampay-transaction-success" class="streampay__payment-control streampay__payment-control__success"
+	<div id="streampay-transaction-success" class="streampay__payment-control streampay__payment-control__sucess"
 		aria-hidden="true" role="alert">
-		<div class="streampay__payment-control__success__icon">
+		<div class="streampay__payment-control__sucess__icon">
 			<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="#09b765">
 				<path fill-rule="evenodd"
 					d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
 					clip-rule="evenodd" />
 			</svg>
 		</div>
-		<h3 class="streampay__payment-control__success__heading"><?php esc_html_e( 'Transaction Done', 'StreamPay' ); ?></h3>
-		<p class="streampay__payment-control__success__desc">
-			<?php esc_html_e( 'Transaction with ', 'StreamPay' ); ?>
-			<span class="streampay__payment-control__success__amount-value-wrapper text-med">
-				<span id="streampay-transaction-value" class="streampay__payment-control__success__amount-value">-</span>
-				<span class="streampay__payment-control__success__amount-value-unit"><?php esc_html_e( 'USDC', 'StreamPay' ); ?></span>
+		<h3 class="streampay__payment-control__sucess__heading"><?php esc_html_e( 'Transaction Done', 'streampay' ); ?></h3>
+		<p class="streampay__payment-control__sucess__desc">
+			<?php esc_html_e( 'Transaction with ', 'streampay' ); ?>
+			<span class="streampay__payment-control__sucess__amount-value-wrapper text-med">
+				<span id="streampay-transaction-value" class="streampay__payment-control__sucess__amount-value">-</span>
+				<span class="streampay__payment-control__sucess__amount-value-unit"><?php esc_html_e( 'USDC', 'streampay' ); ?></span>
 			</span>
-			<?php esc_html_e( 'is made successfully', 'StreamPay' ); ?>
+			<?php esc_html_e( 'is made successfully', 'streampay' ); ?>
 		</p>
 	</div>
 </section>

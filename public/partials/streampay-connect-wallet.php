@@ -1,6 +1,6 @@
 		<!-- Connect Wallet Button -->
 	<button id="streampay-connect-wallet" type="button" aria-hidden="true"
-		class="streampay__payment-control streampay__payment-control--btn streampay__payment-control__connect-wallet"><?php esc_html_e( 'Connect to Phantom Wallet', 'StreamPay' ); ?></button>
+		class="streampay__payment-control streampay__payment-control--btn streampay__payment-control__connect-wallet"><?php esc_html_e( 'Connect to Phantom Wallet', 'streampay' ); ?></button>
 		<fieldset id="wc-<?php echo esc_attr( $this->id ); ?>-cc-form" class="wc-credit-card-form wc-payment-form" style="background:transparent;">
 
 	<?php

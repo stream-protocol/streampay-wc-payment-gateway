@@ -8,16 +8,16 @@
  * registers the activation and deactivation functions, and defines a function
  * that starts the plugin.
  *
- * @link              https://plugins.streampayment.app/download
+ * @link              https://streamprotocol.org/plugins/
  * @since             1.0.0
- * @package           StreamPay
+ * @package           StreamPay WooCommerce Payment Gateway
  *
  * @wordpress-plugin
- * Plugin Name:       Stream Payment Gateway
- * Plugin URI:        https://plugins.streampayment.app/download
+ * Plugin Name:       StreamPay Payment Gateway
+ * Plugin URI:        https://streamprotocol.org/plugins/
  * Description:       A payment gateway using StreamPay for your WooCommerce store.
  * Version:           1.0.0
- * Author:            StreamPay
+ * Author:            Stream Protocol
  * Author URI:        https://profiles.wordpress.org/streampayplugins/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
@@ -35,31 +35,31 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'streampay_VERSION', '1.0.0' );
-define( 'streampay_ROOT', plugin_dir_path( __FILE__ ) );
-define( 'streampay_ASSETS', streampay_ROOT . '/assets/' );
-define( 'streampay_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/' );
-define( 'streampay_GATEWAY_ID', 'wc_streampay_solana' );
-define( 'streampay_SIGNATURE_STORAGE', 'wc_streampay_signature' );
-define( 'streampay_MEMO_SESSION', 'streampay_order_memo' );
+define( 'STREAMPAY_VERSION', '1.0.0' );
+define( 'STREAMPAY_ROOT', plugin_dir_path( __FILE__ ) );
+define( 'STREAMPAY_ASSETS', STREAMPAY_ROOT . '/assets/' );
+define( 'STREAMPAY_ASSETS_URL', plugin_dir_url( __FILE__ ) . 'assets/' );
+define( 'STREAMPAY_GATEWAY_ID', 'wc_streampay_solana' );
+define( 'STREAMPAY_SIGNATURE_STORAGE', 'wc_streampay_signature' );
+define( 'STREAMPAY_MEMO_SESSION', 'streampay_order_memo' );
 
 /**
  * Add the helper functions file.
  */
-if ( is_readable( streampay_ROOT . 'helper.php' ) ) {
-	require_once streampay_ROOT . 'helper.php';
+if ( is_readable( STREAMPAY_ROOT . 'helper.php' ) ) {
+	require_once STREAMPAY_ROOT . 'helper.php';
 }
 
-if ( is_readable( streampay_ROOT . '/vendor/autoload.php' ) ) {
-	require_once streampay_ROOT . '/vendor/autoload.php';
+if ( is_readable( STREAMPAY_ROOT . '/vendor/autoload.php' ) ) {
+	require_once STREAMPAY_ROOT . '/vendor/autoload.php';
 }
 /**
  * The code that runs during plugin activation.
  * This action is documented in includes/class-streampay-activator.php
  */
 function activate_streampay() {
-	require_once streampay_ROOT . 'includes/class-streampay-activator.php';
-	streampay_Activator::activate();
+	require_once STREAMPAY_ROOT . 'includes/class-streampay-activator.php';
+	StreamPay_Activator::activate();
 }
 
 /**
@@ -67,8 +67,8 @@ function activate_streampay() {
  * This action is documented in includes/class-streampay-deactivator.php
  */
 function deactivate_streampay() {
-	require_once streampay_ROOT . 'includes/class-streampay-deactivator.php';
-	streampay_Deactivator::deactivate();
+	require_once STREAMPAY_ROOT . 'includes/class-streampay-deactivator.php';
+	StreamPay_Deactivator::deactivate();
 }
 
 register_activation_hook( __FILE__, 'activate_streampay' );
@@ -78,7 +78,7 @@ register_deactivation_hook( __FILE__, 'deactivate_streampay' );
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require streampay_ROOT . 'includes/class-streampay.php';
+require STREAMPAY_ROOT . 'includes/class-streampay.php';
 
 /**
  * Begins execution of the plugin.

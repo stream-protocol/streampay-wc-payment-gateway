@@ -1,7 +1,7 @@
 import { getOrCreateAssociatedTokenAccount } from "@solana/spl-token";
 import { Connection, PublicKey } from "@solana/web3.js";
 
-import { WP_LOCALIZED_TEXT } from "../utils/enums";
+import { WP_LOCLIZED_TEXT } from "../utils/enums";
 import { getWPLocalizedText } from "../utils/functions";
 import { getUSDCTokenKey } from "./payment";
 
@@ -14,18 +14,18 @@ import { getUSDCTokenKey } from "./payment";
  * @returns {{isValid:boolean, recipientKey: {isValid: boolean, account?:object | undefined, message?: string | undefined}, payerAcc: {isValid: boolean, account?:object | undefined, message?: string | undefined}}}
  */
 export async function validateAccounts(connection, recipientKey, payerKey) {
-    const recipientAcc = await validateAccount(
-        connection,
-        recipientKey,
-        getWPLocalizedText(WP_LOCALIZED_TEXT.RECIPIENT_ACC_NOT_FOUND)
-    );
-    const payerAcc = await validateAccount(
-        connection,
-        payerKey,
-        getWPLocalizedText(WP_LOCALIZED_TEXT.PAYER_ACC_NOT_FOUND)
-    );
+  const recipientAcc = await validateAccount(
+    connection,
+    recipientKey,
+    getWPLocalizedText(WP_LOCLIZED_TEXT.RECIPIENT_ACC_NOT_FOUND)
+  );
+  const payerAcc = await validateAccount(
+    connection,
+    payerKey,
+    getWPLocalizedText(WP_LOCLIZED_TEXT.PAYER_ACC_NOT_FOUND)
+  );
 
-    return { isValid: recipientAcc.isValid && payerAcc.isValid, recipientAcc, payerAcc };
+  return { isValid: recipientAcc.isValid && payerAcc.isValid, recipientAcc, payerAcc };
 }
 
 /**
@@ -37,15 +37,15 @@ export async function validateAccounts(connection, recipientKey, payerKey) {
  * @returns {{isValid: boolean, account?:object | undefined, message?: string | undefined}}
  */
 async function validateAccount(connection, publickKey, customErrorMessage = "") {
-    try {
-        let account = await getOrCreateAssociatedTokenAccount(
-            connection,
-            publickKey.toString(),
-            new PublicKey(getUSDCTokenKey()),
-            new PublicKey(publickKey)
-        );
-        return { isValid: true, account };
-    } catch (err) {
-        return { isValid: false, message: err.message || customErrorMessage || err.toString() };
-    }
+  try {
+    let account = await getOrCreateAssociatedTokenAccount(
+      connection,
+      publickKey.toString(),
+      new PublicKey(getUSDCTokenKey()),
+      new PublicKey(publickKey)
+    );
+    return { isValid: true, account };
+  } catch (err) {
+    return { isValid: false, message: err.message || customErrorMessage || err.toString() };
+  }
 }
