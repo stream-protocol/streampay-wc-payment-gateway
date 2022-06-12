@@ -6,7 +6,7 @@
  * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay WooCommerce Payment Gateway
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/includes
  */
 
@@ -17,7 +17,7 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */

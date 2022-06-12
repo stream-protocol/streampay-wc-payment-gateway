@@ -8,7 +8,7 @@
  * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/admin/partials
  */
 ?>

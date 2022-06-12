@@ -6,7 +6,7 @@
  * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/admin
  */
 
@@ -19,7 +19,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Defines the plugin name, version, and two examples hooks for how to
  * enqueue the admin-specific stylesheet and JavaScript.
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/admin
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */

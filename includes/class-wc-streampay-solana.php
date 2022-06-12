@@ -3,10 +3,10 @@
 /**
  * Handle the payments via Stream Protocol & Solana.
  *
- * @link       https://streamprotocol.org
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/includes
  * @link https://streamprotocol.app/woocommerce/payment-gateway-plugin.html
  * @link https://spl-token-faucet.com/ (for Testing)
@@ -17,12 +17,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Handle the payments via Stream Protocol / Solana.
+ * Handle the payments via Stream Protocol & Solana.
  *
  * This class defines all code necessary to run to use Solana Blockchain.
  *
  * @since      1.0.0
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */
@@ -41,14 +41,14 @@ class Wc_StreamPay_Solana extends WC_Payment_Gateway {
 
 
 	/**
-	 * Here we initalize the payment options, hooks.
+	 * Here we initialize the payment options, hooks.
 	 */
 	public function __construct() {
 		 $this->id                = STREAMPAY_GATEWAY_ID; // payment gateway plugin ID.
 		$this->icon               = ''; // URL of the icon that will be displayed on checkout page near your gateway name.
 		$this->has_fields         = true; // in case you need a custom credit card form.
 		$this->method_title       = esc_html__( 'USDC on Solana', 'streampay' );
-		$this->method_description = esc_html__( 'Pay via Solana USDC', 'streampay' ); // will be displayed on the options page.
+		$this->method_description = esc_html__( 'Pay via USDC', 'streampay' ); // will be displayed on the options page.
 
 		// gateways can support subscriptions, refunds, saved payment methods.
 		$this->supports = array(
@@ -102,7 +102,7 @@ class Wc_StreamPay_Solana extends WC_Payment_Gateway {
 		$this->form_fields = array(
 			'enabled'              => array(
 				'title'       => esc_html__( 'Enable/Disable', 'streampay' ),
-				'label'       => esc_html__( 'Enable StreamPay Solana Pay Gateway', 'streampay' ),
+				'label'       => esc_html__( 'Enable StreamPay Payment Gateway', 'streampay' ),
 				'type'        => 'checkbox',
 				'description' => '',
 				'default'     => 'no',
@@ -119,20 +119,20 @@ class Wc_StreamPay_Solana extends WC_Payment_Gateway {
 				'title'       => esc_html__( 'Title', 'streampay' ),
 				'type'        => 'text',
 				'description' => esc_html__( 'This controls the title which the user sees during checkout.', 'streampay' ),
-				'default'     => esc_html__( 'USDC on Solana Payments', 'streampay' ),
+				'default'     => esc_html__( 'USDC on StreamPay', 'streampay' ),
 				'desc_tip'    => true,
 			),
 			'description'          => array(
 				'title'       => esc_html__( 'Description', 'streampay' ),
 				'type'        => 'textarea',
 				'description' => esc_html__( 'This controls the description which the user sees during checkout.', 'streampay' ),
-				'default'     => esc_html__( 'Pay via USDC on Solana.', 'streampay' ),
+				'default'     => esc_html__( 'Pay via STRM, and USDC on Solana.', 'streampay' ),
 			),
 			'testmode'             => array(
 				'title'       => esc_html__( 'Test mode', 'streampay' ),
 				'label'       => esc_html__( 'Enable Test Mode', 'streampay' ),
 				'type'        => 'checkbox',
-				'description' => esc_html__( 'Place the payment gateway in test mode using test devnet wallet.', 'streampay' ),
+				'description' => esc_html__( 'Place the Stream payment gateway in test mode using test devnet wallet.', 'streampay' ),
 				'default'     => 'no',
 				'desc_tip'    => true,
 			),
@@ -147,7 +147,7 @@ class Wc_StreamPay_Solana extends WC_Payment_Gateway {
 			'network_url'      => array(
 				'title' => esc_html__( 'RPC Network URL', 'streampay' ),
 				'type'  => 'url',
-				'description' => esc_html__( 'Leave empty to use mainnet. For Medium/High Volume Woocommerce Stores and/or Increased Performance Please Use: https://streampay.genesysgo.net/', 'streampay' ),
+				'description' => esc_html__( 'Leave empty to use mainnet. For Medium/High Volume WooCommerce Stores and/or Increased Performance Please Use: https://streampay.genesysgo.net/', 'streampay' ),
 			),
 		);
 	}

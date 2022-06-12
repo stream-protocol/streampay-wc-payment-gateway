@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Fired the streampay Payments Gateways Core.
+ * Fired the StreamPay - WooCommerce Payment Gateway Core.
  *
- * @link       https://streamprotocol.org
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  */
 
@@ -20,14 +20,14 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This class defines all code necessary to run to load the Payment Gateways.
  *
  * @since      1.0.0
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */
 class StreamPay_Core {
 
 	/**
-	 * Fries the core functionlity for StreamPay/Recieve an error message in streampay log if the main class from WooCommerce doesn't exist and include the main functionality if everything is fine.
+	 * Fries the core functionality for StreamPay/Receive an error message in StreamPay log if the main class from WooCommerce doesn't exist and include the main functionality if everything is fine.
 	 *
 	 * @return void
 	 */
@@ -41,7 +41,7 @@ class StreamPay_Core {
 		}
 	}
 	/**
-	 * Add StreamPay method to the woocommerce payments gateway.
+	 * Add StreamPay method to the WooCommerce payments gateway.
 	 *
 	 * @param array $methods an array of wooCommerce methods that already exists.
 	 * @return array $methods the same array but with StreamPay added to it as a payment method.
@@ -71,7 +71,7 @@ class StreamPay_Core {
 	/**
 	 * Add StreamPay Voucher.
 	 *
-	 * @param integer $order_id is the order recieved.
+	 * @param integer $order_id is the order received.
 	 * @return void
 	 */
 	public function add_streampay_special_voucher( $order_id ) {

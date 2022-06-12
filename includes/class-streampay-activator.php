@@ -6,7 +6,7 @@
  * @link       https://streamprotocol.org
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/includes
  */
 
@@ -16,7 +16,7 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */

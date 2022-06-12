@@ -5,10 +5,10 @@
  *
  * This file is used to markup the public-facing aspects of the plugin.
  *
- * @link       https://streamprotocol.org
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay - WooCommerce Payment Gateway
  * @subpackage StreamPay/public/partials
  */
 ?>

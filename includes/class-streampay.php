@@ -6,10 +6,10 @@
  * A class definition that includes attributes and functions used across both the
  * public-facing side of the site and the admin area.
  *
- * @link       https://streamprotocol.org
+ * @link       https://streamprotocol.org/plugins/
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */

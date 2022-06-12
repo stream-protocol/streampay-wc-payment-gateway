@@ -9,7 +9,7 @@
  * @link       https://streamprotocol.org
  * @since      1.0.0
  *
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  */
 
@@ -20,7 +20,7 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    StreamPay
+ * @package    StreamPay Payment Gateway
  * @subpackage StreamPay/includes
  * @author     Stream Protocol / StreamPay  <contact@streamprotocol.org>
  */

@@ -46,3 +46,10 @@ You can learn more on StreamPay and Solanapay.com
 1. Add Solana and Stream Token (STRM) payment feature
 3. Create Cryptocurrency Payments & Cross-Chain Support 
 2. Develop. "company" Fee wallet option, and store % commission features
+3. Create STRM_TOKEN_KEY 
+4. Add StreamPay styles, color presets, scss, css: #2D3139
+5. Create API & Webpack
+
+== Need to Fix ==
+
+Fix composer autoload! Fatal error: Cannot redeclare composerRequirea04b97bdcca75453ab894eb4b3c770e2()

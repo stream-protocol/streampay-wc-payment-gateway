@@ -6,7 +6,7 @@ import { validateAccounts } from "./validateAccounts";
 import { valiateTransSignature } from "./validateTransSignature";
 import { getAPITotalAmount } from "../api/api";
 import { getWPLocalizedText } from "../utils/functions";
-import { WP_LOCLIZED_TEXT, PAYMENT_STEPS } from "../utils/enums";
+import { WP_LOCALIZED_TEXT, PAYMENT_STEPS } from "../utils/enums";
 import { validateWCCheckoutForm } from "./validateWCCheckoutForm";
 import {
     getLocallySavedTransaction,
@@ -119,9 +119,9 @@ function handleAlreadyPaidOrder({ amountUI, date, memo, signature }) {
     lastPaymentAmount = amountUI;
     setPaymentStep(PAYMENT_STEPS.DONE);
     createSuccessAlert(
-        `${getWPLocalizedText(WP_LOCLIZED_TEXT.PAID_ORDER_PART_1)} ${new Date(
+        `${getWPLocalizedText(WP_LOCALIZED_TEXT.PAID_ORDER_PART_1)} ${new Date(
       date
-    ).toLocaleDateString()}${getWPLocalizedText(WP_LOCLIZED_TEXT.PAID_ORDER_PART_2)}`
+    ).toLocaleDateString()}${getWPLocalizedText(WP_LOCALIZED_TEXT.PAID_ORDER_PART_2)}`
     );
     removePayButton();
     setTransactionValue(amountUI);
@@ -197,7 +197,7 @@ async function triggerSolanaPay(e) {
         const isValid = validateWCCheckoutForm();
 
         if (!isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.INVALID_WC_CHECKOUT_FORM));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.INVALID_WC_CHECKOUT_FORM));
             return;
         }
 
@@ -377,11 +377,11 @@ async function handleValidatingAccounts(connection) {
 
     if (!isValid) {
         if (!recipientAcc || !recipientAcc.isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.RECIPIENT_ACC_NOT_FOUND));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.RECIPIENT_ACC_NOT_FOUND));
         }
 
         if (!payerAcc || !payerAcc.isValid) {
-            handleAfterTransError(null, getWPLocalizedText(WP_LOCLIZED_TEXT.PAYER_ACC_NOT_FOUND));
+            handleAfterTransError(null, getWPLocalizedText(WP_LOCALIZED_TEXT.PAYER_ACC_NOT_FOUND));
         }
     }
 
@@ -457,7 +457,7 @@ async function sendTransaction() {
         let signature = await connection.sendRawTransaction(signed.serialize());
 
         if (signature) {
-            createInfoAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.SENDING_TRANSACTION));
+            createInfoAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.SENDING_TRANSACTION));
 
             const isConfirmed = await confirmSignature(connection, signature);
 
@@ -514,7 +514,7 @@ async function handleTransactionValidation(
     } else {
         handleAfterTransError(
             null,
-            `${getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_NOT_FOUND)} ${signature}`
+            `${getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_NOT_FOUND)} ${signature}`
         );
     }
 }
@@ -545,7 +545,7 @@ function handleValidatedTransaction(signature, amountUI, memo) {
     disconnectWallet();
 
     setTimeout(() => {
-        createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_CREATED));
+        createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_CREATED));
         setTimeout(() => {
             removePayButton();
             showTransactionSuccess();
@@ -598,7 +598,7 @@ function transactionIsDone() {
  * @param {string} signature
  */
 async function confirmSignature(connection, signature) {
-    const failedMessage = getWPLocalizedText(WP_LOCLIZED_TEXT.CONFIRMATION_FAILED);
+    const failedMessage = getWPLocalizedText(WP_LOCALIZED_TEXT.CONFIRMATION_FAILED);
     try {
         const timoutMinutes = 2;
         const res = await awaitTransactionSignatureConfirmation(
@@ -608,7 +608,7 @@ async function confirmSignature(connection, signature) {
         );
 
         if (res && !res.err && !res.timeout) {
-            createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.TRANSACTION_CONFIRMED));
+            createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.TRANSACTION_CONFIRMED));
             return true;
         } else throw new Error(failedMessage);
     } catch (err) {
@@ -632,7 +632,7 @@ async function connectToPhantom() {
     try {
         await SOLANA.connect();
         // debugger;
-        createSuccessAlert(getWPLocalizedText(WP_LOCLIZED_TEXT.WALLET_CONNECTED));
+        createSuccessAlert(getWPLocalizedText(WP_LOCALIZED_TEXT.WALLET_CONNECTED));
         toggleConnectWalletButton(false);
         togglePayButton(true);
         setPaymentStep(PAYMENT_STEPS.PAY);
