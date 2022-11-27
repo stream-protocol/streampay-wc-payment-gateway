@@ -1,3 +1,8 @@
+
+<p align="center">
+  <img src="https://i.imgur.com/ZpgeUEr.png" width="800" height="290"/>
+
+
 === StreamPay Payment Gateway ===
 
 Contributors: Stream Protocol / StreamPay plugins
